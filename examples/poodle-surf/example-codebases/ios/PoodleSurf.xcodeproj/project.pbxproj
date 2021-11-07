@@ -1,0 +1,577 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4602E76E2270BEBC00CD7745 /* poodle-surf.json in Resources */ = {isa = PBXBuildFile; fileRef = 4602E76D2270BEBC00CD7745 /* poodle-surf.json */; };
+		46087BE7225D341600F4B63F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087BE6225D341600F4B63F /* AppDelegate.swift */; };
+		46087BE9225D341600F4B63F /* ReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087BE8225D341600F4B63F /* ReportViewController.swift */; };
+		46087BF1225D341800F4B63F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46087BEF225D341800F4B63F /* LaunchScreen.storyboard */; };
+		46087BFA225D3F9900F4B63F /* ReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087BF9225D3F9900F4B63F /* ReportView.swift */; };
+		46087BFC225D419500F4B63F /* ReportHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087BFB225D419500F4B63F /* ReportHeaderView.swift */; };
+		46087BFF225D544400F4B63F /* StrokedCircularImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087BFE225D544400F4B63F /* StrokedCircularImageView.swift */; };
+		46087C03225D54FA00F4B63F /* UIView+Embed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C02225D54FA00F4B63F /* UIView+Embed.swift */; };
+		46087C05225D5A0F00F4B63F /* TemperatureCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C04225D5A0F00F4B63F /* TemperatureCardView.swift */; };
+		46087C07225D5A3600F4B63F /* UIView+CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C06225D5A3600F4B63F /* UIView+CornerRadius.swift */; };
+		46087C0C225D5F0B00F4B63F /* HorizontalImageLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C0B225D5F0B00F4B63F /* HorizontalImageLabelView.swift */; };
+		46087C0E225D62CF00F4B63F /* HorizontalImageVerticalLabelsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C0D225D62CF00F4B63F /* HorizontalImageVerticalLabelsView.swift */; };
+		46087C14225D795000F4B63F /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C13225D795000F4B63F /* LoadingViewController.swift */; };
+		46087C16225D799800F4B63F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C15225D799800F4B63F /* LoadingView.swift */; };
+		46087C19225D7F3200F4B63F /* ReportModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C18225D7F3200F4B63F /* ReportModel.swift */; };
+		46087C2D225FA14B00F4B63F /* DayPartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C2C225FA14B00F4B63F /* DayPartView.swift */; };
+		46087C2F225FA36A00F4B63F /* ForecastCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C2E225FA36A00F4B63F /* ForecastCardView.swift */; };
+		46087C39225FD3F500F4B63F /* CardViewDescribable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C38225FD3F500F4B63F /* CardViewDescribable.swift */; };
+		46087C3B225FDA8800F4B63F /* NSLayoutConstraint+Named.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C3A225FDA8800F4B63F /* NSLayoutConstraint+Named.swift */; };
+		46087C4F226105B500F4B63F /* ReportViewModelBinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C4E226105B400F4B63F /* ReportViewModelBinder.swift */; };
+		46087C532261307500F4B63F /* UIEdgeInsets+Diez.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C522261307500F4B63F /* UIEdgeInsets+Diez.swift */; };
+		46087C572261758D00F4B63F /* ReportModel+Diez.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C562261758D00F4B63F /* ReportModel+Diez.swift */; };
+		46087C5922617A9000F4B63F /* UIImage+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C5822617A9000F4B63F /* UIImage+URL.swift */; };
+		46087C5F22623D8800F4B63F /* ReportViewController+Diez.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C5E22623D8800F4B63F /* ReportViewController+Diez.swift */; };
+		46087C6122623D9400F4B63F /* LoadingViewController+Diez.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46087C6022623D9400F4B63F /* LoadingViewController+Diez.swift */; };
+		46E14CA4226E38CF007938DA /* mock in Resources */ = {isa = PBXBuildFile; fileRef = 46E14CA3226E38CF007938DA /* mock */; };
+		46E14CA6226E3933007938DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46E14CA5226E3933007938DA /* Assets.xcassets */; };
+		F77C6453654086576F2EB0B8 /* Pods_PoodleSurf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25B7519EB95663651F68CE97 /* Pods_PoodleSurf.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1FBAD757E600A6705FC9B779 /* Pods-PoodleSurf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoodleSurf.debug.xcconfig"; path = "Target Support Files/Pods-PoodleSurf/Pods-PoodleSurf.debug.xcconfig"; sourceTree = "<group>"; };
+		25B7519EB95663651F68CE97 /* Pods_PoodleSurf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PoodleSurf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4602E76D2270BEBC00CD7745 /* poodle-surf.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "poodle-surf.json"; sourceTree = "<group>"; };
+		46087BE3225D341600F4B63F /* PoodleSurf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PoodleSurf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		46087BE6225D341600F4B63F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		46087BE8225D341600F4B63F /* ReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportViewController.swift; sourceTree = "<group>"; };
+		46087BF0225D341800F4B63F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		46087BF2225D341800F4B63F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		46087BF9225D3F9900F4B63F /* ReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportView.swift; sourceTree = "<group>"; };
+		46087BFB225D419500F4B63F /* ReportHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportHeaderView.swift; sourceTree = "<group>"; };
+		46087BFE225D544400F4B63F /* StrokedCircularImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokedCircularImageView.swift; sourceTree = "<group>"; };
+		46087C02225D54FA00F4B63F /* UIView+Embed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Embed.swift"; sourceTree = "<group>"; };
+		46087C04225D5A0F00F4B63F /* TemperatureCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureCardView.swift; sourceTree = "<group>"; };
+		46087C06225D5A3600F4B63F /* UIView+CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+CornerRadius.swift"; sourceTree = "<group>"; };
+		46087C0B225D5F0B00F4B63F /* HorizontalImageLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalImageLabelView.swift; sourceTree = "<group>"; };
+		46087C0D225D62CF00F4B63F /* HorizontalImageVerticalLabelsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalImageVerticalLabelsView.swift; sourceTree = "<group>"; };
+		46087C13225D795000F4B63F /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		46087C15225D799800F4B63F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		46087C18225D7F3200F4B63F /* ReportModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportModel.swift; sourceTree = "<group>"; };
+		46087C2C225FA14B00F4B63F /* DayPartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayPartView.swift; sourceTree = "<group>"; };
+		46087C2E225FA36A00F4B63F /* ForecastCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastCardView.swift; sourceTree = "<group>"; };
+		46087C38225FD3F500F4B63F /* CardViewDescribable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewDescribable.swift; sourceTree = "<group>"; };
+		46087C3A225FDA8800F4B63F /* NSLayoutConstraint+Named.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Named.swift"; sourceTree = "<group>"; };
+		46087C4E226105B400F4B63F /* ReportViewModelBinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportViewModelBinder.swift; sourceTree = "<group>"; };
+		46087C522261307500F4B63F /* UIEdgeInsets+Diez.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Diez.swift"; sourceTree = "<group>"; };
+		46087C562261758D00F4B63F /* ReportModel+Diez.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportModel+Diez.swift"; sourceTree = "<group>"; };
+		46087C5822617A9000F4B63F /* UIImage+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+URL.swift"; sourceTree = "<group>"; };
+		46087C5E22623D8800F4B63F /* ReportViewController+Diez.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReportViewController+Diez.swift"; sourceTree = "<group>"; };
+		46087C6022623D9400F4B63F /* LoadingViewController+Diez.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LoadingViewController+Diez.swift"; sourceTree = "<group>"; };
+		46E14CA3226E38CF007938DA /* mock */ = {isa = PBXFileReference; lastKnownFileType = folder; path = mock; sourceTree = "<group>"; };
+		46E14CA5226E3933007938DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E203FEF24EF74EBDA2520826 /* Pods-PoodleSurf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PoodleSurf.release.xcconfig"; path = "Target Support Files/Pods-PoodleSurf/Pods-PoodleSurf.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		46087BE0225D341600F4B63F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F77C6453654086576F2EB0B8 /* Pods_PoodleSurf.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		26F65706D06A94D037C24DF7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25B7519EB95663651F68CE97 /* Pods_PoodleSurf.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46087BDA225D341600F4B63F = {
+			isa = PBXGroup;
+			children = (
+				46087BE5225D341600F4B63F /* PoodleSurf */,
+				46087BE4225D341600F4B63F /* Products */,
+				65C8EFBDD839B4B74105AEB5 /* Pods */,
+				26F65706D06A94D037C24DF7 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		46087BE4225D341600F4B63F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46087BE3225D341600F4B63F /* PoodleSurf.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46087BE5225D341600F4B63F /* PoodleSurf */ = {
+			isa = PBXGroup;
+			children = (
+				46087BE6225D341600F4B63F /* AppDelegate.swift */,
+				46087C00225D54E400F4B63F /* Extensions */,
+				46087BFD225D42F900F4B63F /* Generic Views */,
+				46087C12225D794100F4B63F /* Loading */,
+				46087BF8225D3F7600F4B63F /* Report */,
+				46087C0F225D74C900F4B63F /* Resources */,
+			);
+			path = PoodleSurf;
+			sourceTree = "<group>";
+		};
+		46087BF8225D3F7600F4B63F /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				46087C30225FA44B00F4B63F /* Cards */,
+				46087BFB225D419500F4B63F /* ReportHeaderView.swift */,
+				46087BF9225D3F9900F4B63F /* ReportView.swift */,
+				46087BE8225D341600F4B63F /* ReportViewController.swift */,
+				46087C5E22623D8800F4B63F /* ReportViewController+Diez.swift */,
+				46087C4E226105B400F4B63F /* ReportViewModelBinder.swift */,
+				46087C33225FCECF00F4B63F /* Model */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		46087BFD225D42F900F4B63F /* Generic Views */ = {
+			isa = PBXGroup;
+			children = (
+				46087C0B225D5F0B00F4B63F /* HorizontalImageLabelView.swift */,
+				46087C0D225D62CF00F4B63F /* HorizontalImageVerticalLabelsView.swift */,
+				46087BFE225D544400F4B63F /* StrokedCircularImageView.swift */,
+			);
+			path = "Generic Views";
+			sourceTree = "<group>";
+		};
+		46087C00225D54E400F4B63F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				46087C01225D54E800F4B63F /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		46087C01225D54E800F4B63F /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				46087C06225D5A3600F4B63F /* UIView+CornerRadius.swift */,
+				46087C02225D54FA00F4B63F /* UIView+Embed.swift */,
+				46087C3A225FDA8800F4B63F /* NSLayoutConstraint+Named.swift */,
+				46087C522261307500F4B63F /* UIEdgeInsets+Diez.swift */,
+				46087C5822617A9000F4B63F /* UIImage+URL.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		46087C0F225D74C900F4B63F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				46E14CA5226E3933007938DA /* Assets.xcassets */,
+				46087BF2225D341800F4B63F /* Info.plist */,
+				46087BEF225D341800F4B63F /* LaunchScreen.storyboard */,
+				46E14CA3226E38CF007938DA /* mock */,
+				4602E76D2270BEBC00CD7745 /* poodle-surf.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		46087C12225D794100F4B63F /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				46087C13225D795000F4B63F /* LoadingViewController.swift */,
+				46087C6022623D9400F4B63F /* LoadingViewController+Diez.swift */,
+				46087C15225D799800F4B63F /* LoadingView.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
+		46087C30225FA44B00F4B63F /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				46087C2C225FA14B00F4B63F /* DayPartView.swift */,
+				46087C2E225FA36A00F4B63F /* ForecastCardView.swift */,
+				46087C04225D5A0F00F4B63F /* TemperatureCardView.swift */,
+				46087C38225FD3F500F4B63F /* CardViewDescribable.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		46087C33225FCECF00F4B63F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				46087C18225D7F3200F4B63F /* ReportModel.swift */,
+				46087C562261758D00F4B63F /* ReportModel+Diez.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		65C8EFBDD839B4B74105AEB5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1FBAD757E600A6705FC9B779 /* Pods-PoodleSurf.debug.xcconfig */,
+				E203FEF24EF74EBDA2520826 /* Pods-PoodleSurf.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		46087BE2225D341600F4B63F /* PoodleSurf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46087BF5225D341800F4B63F /* Build configuration list for PBXNativeTarget "PoodleSurf" */;
+			buildPhases = (
+				9D1C3B7FAFEE99D388DD562E /* [CP] Check Pods Manifest.lock */,
+				46087BDF225D341600F4B63F /* Sources */,
+				46087BE0225D341600F4B63F /* Frameworks */,
+				46087BE1225D341600F4B63F /* Resources */,
+				4668B5DC227CC83400BB9213 /* Enable Hot Mode */,
+				796AC2B95E556424098A5EA6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PoodleSurf;
+			productName = PoodleSurf;
+			productReference = 46087BE3225D341600F4B63F /* PoodleSurf.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46087BDB225D341600F4B63F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Haiku;
+				TargetAttributes = {
+					46087BE2225D341600F4B63F = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 46087BDE225D341600F4B63F /* Build configuration list for PBXProject "PoodleSurf" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 46087BDA225D341600F4B63F;
+			productRefGroup = 46087BE4225D341600F4B63F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				46087BE2225D341600F4B63F /* PoodleSurf */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		46087BE1225D341600F4B63F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4602E76E2270BEBC00CD7745 /* poodle-surf.json in Resources */,
+				46087BF1225D341800F4B63F /* LaunchScreen.storyboard in Resources */,
+				46E14CA6226E3933007938DA /* Assets.xcassets in Resources */,
+				46E14CA4226E38CF007938DA /* mock in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4668B5DC227CC83400BB9213 /* Enable Hot Mode */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(TARGET_BUILD_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "Enable Hot Mode";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "$SRCROOT/scripts/update-plist.sh\n";
+		};
+		796AC2B95E556424098A5EA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PoodleSurf/Pods-PoodleSurf-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PoodleSurf/Pods-PoodleSurf-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PoodleSurf/Pods-PoodleSurf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D1C3B7FAFEE99D388DD562E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PoodleSurf-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		46087BDF225D341600F4B63F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46087C05225D5A0F00F4B63F /* TemperatureCardView.swift in Sources */,
+				46087C0E225D62CF00F4B63F /* HorizontalImageVerticalLabelsView.swift in Sources */,
+				46087C07225D5A3600F4B63F /* UIView+CornerRadius.swift in Sources */,
+				46087C03225D54FA00F4B63F /* UIView+Embed.swift in Sources */,
+				46087BE9225D341600F4B63F /* ReportViewController.swift in Sources */,
+				46087C6122623D9400F4B63F /* LoadingViewController+Diez.swift in Sources */,
+				46087C19225D7F3200F4B63F /* ReportModel.swift in Sources */,
+				46087C532261307500F4B63F /* UIEdgeInsets+Diez.swift in Sources */,
+				46087C5922617A9000F4B63F /* UIImage+URL.swift in Sources */,
+				46087C2D225FA14B00F4B63F /* DayPartView.swift in Sources */,
+				46087C16225D799800F4B63F /* LoadingView.swift in Sources */,
+				46087C2F225FA36A00F4B63F /* ForecastCardView.swift in Sources */,
+				46087C0C225D5F0B00F4B63F /* HorizontalImageLabelView.swift in Sources */,
+				46087BFF225D544400F4B63F /* StrokedCircularImageView.swift in Sources */,
+				46087C572261758D00F4B63F /* ReportModel+Diez.swift in Sources */,
+				46087BFC225D419500F4B63F /* ReportHeaderView.swift in Sources */,
+				46087C39225FD3F500F4B63F /* CardViewDescribable.swift in Sources */,
+				46087C14225D795000F4B63F /* LoadingViewController.swift in Sources */,
+				46087BE7225D341600F4B63F /* AppDelegate.swift in Sources */,
+				46087C5F22623D8800F4B63F /* ReportViewController+Diez.swift in Sources */,
+				46087C4F226105B500F4B63F /* ReportViewModelBinder.swift in Sources */,
+				46087C3B225FDA8800F4B63F /* NSLayoutConstraint+Named.swift in Sources */,
+				46087BFA225D3F9900F4B63F /* ReportView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		46087BEF225D341800F4B63F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46087BF0225D341800F4B63F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		46087BF3225D341800F4B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		46087BF4225D341800F4B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		46087BF6225D341800F4B63F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1FBAD757E600A6705FC9B779 /* Pods-PoodleSurf.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TWM39MH96F;
+				INFOPLIST_FILE = PoodleSurf/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.haiku.PoodleSurf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		46087BF7225D341800F4B63F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E203FEF24EF74EBDA2520826 /* Pods-PoodleSurf.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TWM39MH96F;
+				INFOPLIST_FILE = PoodleSurf/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ai.haiku.PoodleSurf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46087BDE225D341600F4B63F /* Build configuration list for PBXProject "PoodleSurf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46087BF3225D341800F4B63F /* Debug */,
+				46087BF4225D341800F4B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		46087BF5225D341800F4B63F /* Build configuration list for PBXNativeTarget "PoodleSurf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				46087BF6225D341800F4B63F /* Debug */,
+				46087BF7225D341800F4B63F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46087BDB225D341600F4B63F /* Project object */;
+}

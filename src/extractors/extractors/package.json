@@ -1,0 +1,60 @@
+{
+  "name": "@diez/extractors",
+  "main": "lib/index.js",
+  "version": "10.6.0",
+  "description": "Diez extractors for various design tools.",
+  "author": "The Haiku Team <contact@haiku.ai>",
+  "license": "SEE LICENSE.md",
+  "typings": "types/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diez/diez.git"
+  },
+  "homepage": "https://diez.org",
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc --watch",
+    "test": "jest",
+    "health": "jest --ci -c jest.ci.js && tslint -p . -t checkstyle -o checkstyle-result.xml",
+    "lint": "tslint -p . -t stylish",
+    "fix": "tslint -p . -t stylish --fix"
+  },
+  "dependencies": {
+    "@diez/cli-core": "^10.6.0",
+    "@diez/extractors-core": "^10.6.0",
+    "@diez/generation": "^10.6.0",
+    "@diez/storage": "^10.6.0",
+    "@diez/test-utils": "^10.6.0",
+    "decompress": "^4.2.0",
+    "fs-extra": "^9.0.1",
+    "fs-walk": "^0.0.2",
+    "ncp": "^2.0.0",
+    "open": "^6.0.0",
+    "pngjs": "^3.3.3",
+    "replace-ext": "^2.0.0",
+    "request": "^2.88.0",
+    "server-destroy": "^1.0.1",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "@diez/test-utils": "^10.6.0",
+    "@types/decompress": "^4.2.3",
+    "@types/fs-extra": "^5.0.4",
+    "@types/jest": "^24.0.11",
+    "@types/open": "^6.0.0",
+    "@types/pngjs": "^3.3.2",
+    "@types/request": "^2.48.1",
+    "@types/server-destroy": "^1.0.0",
+    "@types/uuid": "^3.4.4",
+    "istanbul-reporter-cobertura-haiku": "^1.0.4",
+    "jest": "^24.7.1",
+    "jest-tap-reporter": "^1.9.0",
+    "ts-jest": "^24.1.0",
+    "tslint": "^5.15.0",
+    "tslint-config-haiku": "^1.0.21",
+    "typescript": "^3.7.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

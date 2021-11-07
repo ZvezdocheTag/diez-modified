@@ -1,0 +1,19 @@
+{
+  "name": "create-diez",
+  "version": "10.6.0",
+  "description": "A helper CLI for creating Diez projects.",
+  "author": "The Haiku Team <contact@haiku.ai>",
+  "license": "SEE LICENSE.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diez/diez.git"
+  },
+  "homepage": "https://diez.org",
+  "dependencies": {
+    "@diez/createproject": "^10.6.0",
+    "diez": "^10.6.0"
+  },
+  "bin": {
+    "create-diez": "./bin/create-diez"
+  }
+}

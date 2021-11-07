@@ -1,0 +1,8 @@
+{
+  "providers": {
+    "commands": [
+      "./foobar.js",
+      "./foobar-ignored-dupe.js"
+    ]
+  }
+}

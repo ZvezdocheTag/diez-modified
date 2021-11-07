@@ -1,0 +1,562 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="RtlHardcoded">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/report"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/bannerImage"
+                        android:layout_width="match_parent"
+                        android:layout_height="149dp"
+                        android:scaleType="centerCrop" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/locationImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/labelsLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/regionLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:id="@+id/placeLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/contentLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Temperature Card -->
+                    <org.diez.poodleSurf.PanelView
+                        android:id="@+id/temperatureCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/temperatureCardTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/tempCardIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <TextView
+                                android:id="@+id/tempCardTempText"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <Space
+                                android:id="@+id/horizontalSpacing"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/wetsuitIcon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                            <LinearLayout
+                                android:id="@+id/wetsuitLabelGroup"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/wetsuitLabel"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:id="@+id/wetsuitValue"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </org.diez.poodleSurf.PanelView>
+
+                    <!-- Wind Card -->
+                    <org.diez.poodleSurf.PanelView
+                        android:id="@+id/windCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/windCardTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Column 1 -->
+                            <LinearLayout
+                                android:id="@+id/windEarly"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/windEarlyIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:id="@+id/windEarlyValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/windEarlyValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/windEarlyUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/windEarlyTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/earlyDivider"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent" />
+
+                            <!-- Column 2 -->
+                            <LinearLayout
+                                android:id="@+id/windMiddle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/windMiddleIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:id="@+id/windMiddleValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/windMiddleValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/windMiddleUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/windMiddleTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/middleDivider"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent" />
+
+                            <!-- Column 3 -->
+                            <LinearLayout
+                                android:id="@+id/windLate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <ImageView
+                                    android:id="@+id/windLateIcon"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                                <LinearLayout
+                                    android:id="@+id/windLateValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/windLateValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/windLateUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/windLateTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </org.diez.poodleSurf.PanelView>
+
+                    <!-- Swell Card -->
+                    <org.diez.poodleSurf.PanelView
+                        android:id="@+id/swellCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/swellCardTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Column 1 -->
+                            <LinearLayout
+                                android:id="@+id/swellEarly"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/swellEarlyValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/swellEarlyValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/swellEarlyUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/swellEarlyTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/swellEarlyDivider"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent" />
+
+                            <!-- Column 2 -->
+                            <LinearLayout
+                                android:id="@+id/swellMiddle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/swellMiddleValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/swellMiddleValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/swellMiddleUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/swellMiddleTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/swellMiddleDivider"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent" />
+
+                            <!-- Column 3 -->
+                            <LinearLayout
+                                android:id="@+id/swellLate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/swellLateValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/swellLateValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/swellLateUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/swellLateTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </org.diez.poodleSurf.PanelView>
+
+                    <!-- Tide Card -->
+                    <org.diez.poodleSurf.PanelView
+                        android:id="@+id/tideCard"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tideCardTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- Column 1 -->
+                            <LinearLayout
+                                android:id="@+id/tideEarly"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/tideEarlyValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tideEarlyValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/tideEarlyUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tideEarlyTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/tideEarlyDivider"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent" />
+
+                            <!-- Column 2 -->
+                            <LinearLayout
+                                android:id="@+id/tideMiddle"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/tideMiddleValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tideMiddleValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/tideMiddleUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tideMiddleTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:id="@+id/tideMiddleDivider"
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent" />
+
+                            <!-- Column 3 -->
+                            <LinearLayout
+                                android:id="@+id/tideLate"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center_horizontal"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:id="@+id/tideLateValueUnit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center_horizontal"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/tideLateValue"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+
+                                    <TextView
+                                        android:id="@+id/tideLateUnit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/tideLateTime"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </org.diez.poodleSurf.PanelView>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/loadingBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+</FrameLayout>

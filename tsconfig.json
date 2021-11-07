@@ -1,0 +1,14 @@
+{
+  "extends": "./src/tsconfig.shared.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "composite": false,
+    "incremental": false
+  },
+  "include": [
+    "scripts/**/*.ts",
+    "src/*/*/src/**/*.ts"
+  ]
+}

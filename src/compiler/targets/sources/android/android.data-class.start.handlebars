@@ -1,0 +1,26 @@
+{{#if hasProperties}}
+{{> comment .}}
+data class {{{type}}}(
+{{#if fixed}}
+{{#each properties}}
+    {{> comment .}}
+    val {{{this.name}}}: {{{this.type}}} = {{{this.initializer}}}{{#unless @last}},{{/unless}}
+{{/each}}
+{{else}}
+{{#each properties}}
+    {{> comment .}}
+    val {{{this.name}}}: {{{this.type}}}{{#unless @last}},{{/unless}}
+{{/each}}
+{{/if}}
+{{else}}
+{{> comment .}}
+data class {{{type}}}(
+    val nonce: String = ""
+{{/if}}
+{{#if isRootComponent}}) : RootComponent {
+    companion object {}
+    override val name = "{{{type}}}"
+{{else}}
+) {
+    companion object {}
+{{/if}}

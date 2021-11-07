@@ -1,0 +1,233 @@
+import {each} from 'async';
+import {ChildProcess, exec as coreExec, ExecException, ExecOptions} from 'child_process';
+import {existsSync, readFileSync} from 'fs-extra';
+import {platform} from 'os';
+import packageJson, {AbbreviatedVersion as PackageJson} from 'package-json';
+import {dirname, join} from 'path';
+import {DiezConfiguration} from './api';
+import {Log} from './reporting';
+
+// tslint:disable-next-line:no-var-requires
+const cliCorePackageJson = require(join('..', 'package.json'));
+
+/**
+ * The development dependencies of this package.
+ * @ignore
+ */
+export const devDependencies: {[key: string]: string} = cliCorePackageJson.devDependencies;
+
+/**
+ * The version of this package. Used for synchronizing Diez versions.
+ * @ignore
+ */
+export const diezVersion: string = cliCorePackageJson.version;
+
+/**
+ * Cache for found plugins.
+ */
+const plugins = new Map<string, DiezConfiguration>();
+
+/**
+ * A Promise-wrapped `child_process.exec`.
+ * @param command - The command to run, with space-separated arguments.
+ * @param options - The child_process.exec options.
+ */
+export const execAsync = (command: string, options?: ExecOptions) => new Promise<string>(
+  (resolve, reject) => {
+    coreExec(command, options, (error: ExecException | null, stdout: string | Buffer) => {
+      if (error) {
+        reject(error);
+        return;
+      }
+
+      resolve(stdout.toString().trim());
+    });
+  },
+);
+
+/**
+ * Returns true iff we are on the macOS platform.
+ * @ignore
+ */
+export const isMacOS = () => platform() === 'darwin';
+
+/**
+ * @internal
+ */
+const getPackageJsonPath = (packageName: string) => {
+  try {
+    return require.resolve(join(packageName, 'package.json'));
+  } catch (_) {
+    // istanbul ignore next
+    return undefined;
+  }
+};
+
+/**
+ * Recursively resolve dependencies for a given package name.
+ */
+const getDependencies = (
+  packageName: string,
+  foundPackages: Map<string, {json: PackageJson, path: string}>,
+  isRootPackage = false,
+): void => {
+  // istanbul ignore if
+  if (foundPackages.has(packageName)) {
+    return;
+  }
+
+  const packageJsonPath = getPackageJsonPath(packageName);
+  // istanbul ignore if
+  if (!packageJsonPath) {
+    return;
+  }
+
+  const packagePath = dirname(packageJsonPath);
+  const json = require(packageJsonPath);
+
+  foundPackages.set(isRootPackage ? '.' : packageName, {json, path: packagePath});
+
+  if (json.dependencies) {
+    for (const name in json.dependencies) {
+      try {
+        getDependencies(name, foundPackages);
+      } catch (_) {}
+    }
+  }
+
+  if (isRootPackage && json.devDependencies) {
+    for (const name in json.devDependencies) {
+      try {
+        getDependencies(name, foundPackages);
+      } catch (_) {}
+    }
+  }
+};
+
+/**
+ * Loops through all dependencies to locate Diez plugins, and returns a map of module names to [[DiezConfiguration]]s.
+ */
+export const findPlugins = (
+  rootPackageName = global.process.cwd(),
+  bootstrapRoot?: string,
+): Promise<Map<string, DiezConfiguration>> => {
+  // Use our cache if it's populated.
+  if (plugins.size) {
+    return Promise.resolve(plugins);
+  }
+
+  const foundPackages = new Map<string, {json: PackageJson, path: string}>();
+  getDependencies(rootPackageName, foundPackages, true);
+  if (bootstrapRoot) {
+    getDependencies(bootstrapRoot, foundPackages);
+  }
+
+  return new Promise((resolve) => {
+    each<[string, {json: PackageJson, path: string}]>(
+      Array.from(foundPackages),
+      ([packageName, {json, path}], next) => {
+        const configuration = (json.diez || {}) as DiezConfiguration;
+        const diezRcPath = join(path, '.diezrc');
+        if (!existsSync(diezRcPath)) {
+          return next();
+        }
+
+        try {
+          const rcConfiguration = JSON.parse(readFileSync(diezRcPath).toString());
+          Object.assign(configuration, rcConfiguration);
+        } catch (error) {
+          Log.warning(`Found invalid .diezrc at ${diezRcPath}`);
+        }
+
+        if (Object.keys(configuration).length) {
+          plugins.set(packageName, configuration);
+        }
+
+        return next();
+      },
+      () => {
+        resolve(plugins);
+      },
+    );
+  });
+};
+
+/**
+ * Wrapped require to support CLI plugin infrastructure.
+ * @ignore
+ */
+export const cliRequire = <T>(plugin: string, path: string): T => {
+  if (plugin === '.') {
+    return require(join(global.process.cwd(), path));
+  }
+
+  return require(join(plugin, path));
+};
+
+/**
+ * Provides an async check for whether we can run a command from the command line.
+ *
+ * Resolves `true` iff the command both runs and produces output.
+ */
+export const canRunCommand = async (command: string) => {
+  try {
+    return !!(await execAsync(command));
+  } catch (_) {
+    return false;
+  }
+};
+
+/**
+ * Locate a binary on macOS.
+ */
+export const locateBinaryMacOS = async (bundleId: string) => {
+  if (!isMacOS()) {
+    throw new Error('Platform is not macOS');
+  }
+
+  const result = await execAsync(`mdfind kMDItemCFBundleIdentifier=${bundleId}`);
+  if (!result) {
+    return undefined;
+  }
+
+  return result.split('\n')[0];
+};
+
+/**
+ * Exit trap for shutting down handles and preventing process leaks in Node.
+ */
+export const exitTrap = (cleanup: () => void) => {
+  global.process.once('exit', cleanup);
+  global.process.once('SIGINT', cleanup);
+  global.process.once('SIGHUP', cleanup);
+  global.process.once('SIGQUIT', cleanup);
+  global.process.once('SIGTSTP', cleanup);
+};
+
+/**
+ * Checks if an argument is a ChildProcess
+ */
+export const isChildProcess = (proc: void | ChildProcess | Buffer): proc is ChildProcess => {
+  return Boolean(proc) && (proc as ChildProcess).kill !== undefined;
+};
+
+/**
+ * Checks if a package name seems to be a Diez package.
+ * @ignore
+ */
+export const isDiezPackage = (packageName: string) => {
+  return packageName === 'diez' || packageName.includes('@diez/');
+};
+
+/**
+ * Fetch information about the diez package in the npm registry.
+ * @ignore
+ */
+export const getDiezVersionInformationFromNpm = async () => {
+  const {'dist-tags': distTags, versions} = await packageJson('diez', {allVersions: true});
+
+  return {
+    latestDiezVersion: distTags.latest,
+    allDiezVersions: versions,
+  };
+};

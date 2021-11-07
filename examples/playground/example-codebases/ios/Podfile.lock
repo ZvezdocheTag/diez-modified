@@ -1,0 +1,27 @@
+PODS:
+  - DiezPlayground (0.1.0)
+  - lottie-ios (3.1.1)
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - DiezPlayground (from `../../design-language/build/diez-playground-ios`)
+  - lottie-ios (= 3.1.1)
+  - SnapKit (= 5.0.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - lottie-ios
+    - SnapKit
+
+EXTERNAL SOURCES:
+  DiezPlayground:
+    :path: "../../design-language/build/diez-playground-ios"
+
+SPEC CHECKSUMS:
+  DiezPlayground: c2a83752bf75e6ac0bdd1322ac1c03d9d9ea62b5
+  lottie-ios: 43a472d22b2dd2bed292cc4010c0b4d2e66d3ba8
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: 450b7150ebea3a7e1976103fd26df786f8ab0aec
+
+COCOAPODS: 1.7.4

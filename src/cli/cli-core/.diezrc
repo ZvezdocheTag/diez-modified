@@ -1,0 +1,8 @@
+{
+  "providers": {
+    "commands": [
+      "./lib/commands/analytics",
+      "./lib/commands/update"
+    ]
+  }
+}

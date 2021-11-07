@@ -1,0 +1,1 @@
+export {reportModelMock} from './ReportModelMock';

@@ -1,0 +1,23 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowJs": false,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "incremental": true,
+    "target": "ESNext",
+    "module": "commonjs",
+    "lib": ["esnext", "dom"],
+    "esModuleInterop": true,
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "preserveWatchOutput": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "newLine": "lf",
+    "sourceMap": true
+  }
+}

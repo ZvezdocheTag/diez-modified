@@ -1,0 +1,7 @@
+{
+  "providers": {
+    "extractors": [
+      "./lib/extractors/figma"
+    ]
+  }
+}

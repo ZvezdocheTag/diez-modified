@@ -1,0 +1,17 @@
+{
+  "name": "Diez",
+  "mode": "modules",
+  "out": "api",
+  "theme": "./node_modules/typedoc-theme-diez",
+  "ignoreCompilerErrors": "false",
+  "preserveConstEnums": "true",
+  "excludeNotExported": "true",
+  "excludePrivate": "true",
+  "external-modulemap": "src\/([^\/]+\/[^\/]+)\/.*",
+  "readme": "scripts/internal/README-docs.md",
+  "exclude": [
+    "scripts/**/*.ts",
+    "src/framework/web-sdk-common/**/*.ts",
+    "src/utils/**/*.ts"
+  ]
+}

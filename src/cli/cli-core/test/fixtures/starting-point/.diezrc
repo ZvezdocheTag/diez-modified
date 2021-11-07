@@ -1,0 +1,16 @@
+{
+  "providers": {
+    "commands": [
+      "./does/not/exist"
+    ],
+    "extensions": [
+      "./does/not/exist"
+    ]
+  },
+  "commandOptions": {
+    "foobar": {
+      "booleanParam": true,
+      "stringParam": "baz"
+    }
+  }
+}
